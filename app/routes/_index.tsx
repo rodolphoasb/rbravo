@@ -1,14 +1,6 @@
 import { BoltIcon } from '@heroicons/react/16/solid'
 import type { MetaFunction } from '@remix-run/node'
-import {
-  Github,
-  GithubIcon,
-  Globe2Icon,
-  InfoIcon,
-  Linkedin,
-  Mail,
-  X,
-} from 'lucide-react'
+import { GithubIcon, Globe2Icon, InfoIcon, Linkedin, Mail } from 'lucide-react'
 import {
   Tooltip,
   TooltipContent,
