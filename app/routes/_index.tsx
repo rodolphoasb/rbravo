@@ -250,8 +250,7 @@ const experience = [
 const projects = [
   {
     name: 'Til',
-    description:
-      'A platform that allows people to create and sell online courses.',
+    description: 'Learn guitar with the pros.',
     tags: ['React', 'Typescript', 'Next.js', 'Tailwind CSS', 'Node.js', 'AWS'],
     link: 'https://til.co?utm_source=https://www.rbravo.dev',
   },
