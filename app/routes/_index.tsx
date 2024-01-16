@@ -10,8 +10,12 @@ import {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
+    { title: 'Rodolpho Bravo - CV' },
+    {
+      name: 'description',
+      content:
+        '🇧🇷 • Building beautiful things for the web and sharing my learnings along the way',
+    },
   ]
 }
 
