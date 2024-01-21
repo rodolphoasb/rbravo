@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
+    "@mdx-js/rollup": "^3.0.0",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@remix-run/css-bundle": "2.5.1",
     "@remix-run/express": "2.5.1",
@@ -44,6 +45,8 @@
     "morgan": "^1.10.0",
     "react": "18.3.0-canary-b30030471-20240117",
     "react-dom": "18.3.0-canary-b30030471-20240117",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^4.0.0",
     "remix-typedjson": "^0.4.1",
     "tailwind-merge": "^2.2.0"
   },
