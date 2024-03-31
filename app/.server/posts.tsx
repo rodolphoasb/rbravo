@@ -23,7 +23,7 @@ export const getPosts = async (): Promise<PostMeta[]> => {
 
     if (slug === undefined) throw new Error(`No route for ${slug}`);
     return {
-      slug: "first",
+      slug,
       frontmatter: post.frontmatter,
     };
   });
