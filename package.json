@@ -4,11 +4,15 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "node ./server.mjs",
+    "build": "npm run clean && remix vite:build",
+    "dev": "npm run clean && node ./server.mjs",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "cross-env NODE_ENV=production node ./server.mjs",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "clean": "rimraf build",
+    "act": "doppler run -- act -s FLY_API_TOKEN --container-architecture linux/amd64"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.3",
@@ -16,8 +20,11 @@
     "@remix-run/express": "^2.8.1",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
+    "chalk": "^5.3.0",
     "clsx": "^2.1.0",
     "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "isbot": "^4.1.0",
     "lucide-react": "^0.363.0",
@@ -27,6 +34,7 @@
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.4",
     "@mdx-js/rollup": "^3.0.1",
     "@remix-run/dev": "^2.8.1",
     "@tailwindcss/typography": "^0.5.12",
@@ -38,7 +46,6 @@
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "autoprefixer": "^10.4.19",
-    "cross-env": "^7.0.3",
     "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
@@ -50,6 +57,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^4.0.0",
     "remix-flat-routes": "^0.6.4",
+    "rimraf": "^5.0.5",
     "shikiji": "^0.10.2",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.1.6",
