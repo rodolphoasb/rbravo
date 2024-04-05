@@ -225,8 +225,8 @@ export default function Index() {
                     ))}
                   </div>
                   {sideProject ? (
-                    <div className="mt-2 bg-gradient-to-r from-neutral-900 to-neutral-700 rounded-b-lg flex justify-center py-1">
-                      <p className="font-mono text-xs text-white">
+                    <div className="mt-2 bg-gradient-to-r from-neutral-200/60 to-neutral-50 rounded-b-lg flex justify-center py-1">
+                      <p className="font-mono text-xs text-neutral-900">
                         Side project
                       </p>
                     </div>
