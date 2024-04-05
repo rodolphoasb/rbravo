@@ -1,25 +1,24 @@
-import { GithubIcon, Linkedin, Mail } from 'lucide-react'
-
+import { GithubIcon, Linkedin, Mail } from "lucide-react";
 
 export const contacts = [
   {
-    name: 'Github',
-    link: 'https://github.com/rodolphoasb',
+    name: "Github",
+    link: "https://github.com/rodolphoasb",
     icon: <GithubIcon className="h-4 w-4 text-zinc-400" />,
   },
   {
-    name: 'Email',
-    link: 'mailto:bravorodolpho@gmail.com',
+    name: "Email",
+    link: "mailto:bravorodolpho@gmail.com",
     icon: <Mail className="h-4 w-4 text-zinc-400" />,
   },
   {
-    name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/rodolpho-bravo-43a4b0239/',
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/rodolpho-bravo-43a4b0239/",
     icon: <Linkedin className="h-4 w-4 text-zinc-400" />,
   },
   {
-    name: 'X',
-    link: 'https://twitter.com/rodolphobravo',
+    name: "X",
+    link: "https://twitter.com/rodolphobravo",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,29 +32,29 @@ export const contacts = [
       </svg>
     ),
   },
-]
+];
 
 export const skills = [
-  'Typescript',
-  'React',
-  'React Native',
-  'Node.js',
-  'Tailwind CSS',
-  'Serverless',
-  'AWS',
-]
+  "Typescript",
+  "React",
+  "React Native",
+  "Node.js",
+  "Tailwind CSS",
+  "Serverless",
+  "AWS",
+];
 
 export const experience = [
   {
-    company: 'Til',
+    company: "Til",
     shouldShowDescriptions: true,
-    externalLink: 'https://til.co?utm_source=https://www.rbravo.dev',
+    externalLink: "https://til.co?utm_source=https://www.rbravo.dev",
     hasHighlights: true,
     positions: [
       {
-        role: 'Full Stack Engineer (Full Time)',
-        startDate: 'Jun/22',
-        endDate: 'Current',
+        role: "Full Stack Engineer (Full Time)",
+        startDate: "Jun/22",
+        endDate: "Current",
         description: (
           <div>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
@@ -72,15 +71,15 @@ export const experience = [
     ],
   },
   {
-    company: 'Loops',
+    company: "Loops",
     hasHighlights: true,
-    externalLink: 'https://loops.so?utm_source=https://www.rbravo.dev',
+    externalLink: "https://loops.so?utm_source=https://www.rbravo.dev",
     shouldShowDescriptions: true,
     positions: [
       {
-        role: 'Full Stack Engineer (Freelancer)',
-        startDate: 'Jan/22',
-        endDate: 'Jun/22',
+        role: "Full Stack Engineer (Freelancer)",
+        startDate: "Jan/22",
+        endDate: "Jun/22",
         description: (
           <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
             Development of the initial version of an email-sending platform
@@ -92,14 +91,14 @@ export const experience = [
     ],
   },
   {
-    company: 'Ticketteer',
+    company: "Ticketteer",
     shouldShowDescriptions: true,
-    externalLink: 'https://ticketteer.com?utm_source=https://www.rbravo.dev',
+    externalLink: "https://ticketteer.com?utm_source=https://www.rbravo.dev",
     positions: [
       {
-        role: 'Frontend Developer (Freelancer)',
-        startDate: 'Jan/22',
-        endDate: 'Mar/22',
+        role: "Frontend Developer (Freelancer)",
+        startDate: "Jan/22",
+        endDate: "Mar/22",
         description: (
           <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
             Development of Admin panel and the initial part of the store web
@@ -111,15 +110,15 @@ export const experience = [
     ],
   },
   {
-    company: 'Livance',
+    company: "Livance",
     shouldShowDescriptions: true,
     externalLink:
-      'https://www.livance.com.br?utm_source=https://www.rbravo.dev',
+      "https://www.livance.com.br?utm_source=https://www.rbravo.dev",
     positions: [
       {
-        role: 'Frontend Developer (Freelancer)',
-        startDate: 'Jan/21',
-        endDate: 'Jan/22',
+        role: "Frontend Developer (Freelancer)",
+        startDate: "Jan/21",
+        endDate: "Jan/22",
         description: (
           <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
             Website development and maintenance using Webflow, JQuery, and
@@ -133,13 +132,13 @@ export const experience = [
     ],
   },
   {
-    company: 'Orda',
-    externalLink: 'https://www.getorda.com?utm_source=https://www.rbravo.dev',
+    company: "Orda",
+    externalLink: "https://www.getorda.com?utm_source=https://www.rbravo.dev",
     positions: [
       {
-        role: 'Frontend Developer (Freelancer)',
-        startDate: 'Nov/21',
-        endDate: 'Dec/21',
+        role: "Frontend Developer (Freelancer)",
+        startDate: "Nov/21",
+        endDate: "Dec/21",
         description: (
           <div>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
@@ -164,14 +163,14 @@ export const experience = [
     ],
   },
   {
-    company: 'Collegia',
+    company: "Collegia",
     externalLink:
-      'https://www.collegia.co.uk?utm_source=https://www.rbravo.dev',
+      "https://www.collegia.co.uk?utm_source=https://www.rbravo.dev",
     positions: [
       {
-        role: 'Frontend Developer (Freelancer)',
-        startDate: 'Apr/21',
-        endDate: 'Dec/21',
+        role: "Frontend Developer (Freelancer)",
+        startDate: "Apr/21",
+        endDate: "Dec/21",
         description: (
           <div>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
@@ -191,12 +190,12 @@ export const experience = [
     ],
   },
   {
-    company: 'Grupo Santander',
+    company: "Grupo Santander",
     positions: [
       {
-        role: 'Commercial Manager (Full Time)',
-        startDate: 'May/19',
-        endDate: 'Oct/20',
+        role: "Commercial Manager (Full Time)",
+        startDate: "May/19",
+        endDate: "Oct/20",
         description: (
           <div>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
@@ -214,9 +213,9 @@ export const experience = [
         ),
       },
       {
-        role: 'Commercial Assistant (Full Time)',
-        startDate: 'May/17',
-        endDate: 'May/19',
+        role: "Commercial Assistant (Full Time)",
+        startDate: "May/17",
+        endDate: "May/19",
         description: (
           <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
             Management support and customer success in the E3 segment
@@ -227,32 +226,42 @@ export const experience = [
       },
     ],
   },
-]
+];
 
 export const projects = [
   {
-    name: 'Til',
-    description: 'Learn guitar with the pros.',
-    tags: ['React', 'Typescript', 'Next.js', 'Tailwind CSS', 'Node.js', 'AWS'],
-    link: 'https://til.co?utm_source=https://www.rbravo.dev',
+    name: "Til",
+    description: "Learn guitar with the pros.",
+    tags: ["React", "Typescript", "Next.js", "Tailwind CSS", "Node.js", "AWS"],
+    link: "https://til.co?utm_source=https://www.rbravo.dev",
   },
   {
-    name: 'Loops',
-    description: 'A better way to send marketing + transactional email',
-    tags: ['React', 'Typescript', 'Next.js', 'Tailwind CSS', 'AWS'],
-    link: 'https://loops.so?utm_source=https://www.rbravo.dev',
+    name: "Loops",
+    description: "A better way to send marketing + transactional email.",
+    tags: ["React", "Typescript", "Next.js", "Tailwind CSS", "AWS"],
+    link: "https://loops.so?utm_source=https://www.rbravo.dev",
+    yc: true,
   },
   {
-    name: 'Mercado Rural',
-    description: 'A marketplace for rural products.',
-    tags: ['React', 'Typescript', 'Next.js', 'Tailwind CSS', 'Node.js', 'AWS'],
-    link: 'https://mercadorural.org?utm_source=https://www.rbravo.dev',
-  },
-  {
-    name: 'Livance',
+    name: "Zencart",
     description:
-      'A platform that allows doctors and psychologists to have an office room in a much easier way (WeWork for doctors).',
-    tags: ['Webflow', 'JQuery', 'Zapier'],
-    link: 'https://www.livance.com.br?utm_source=https://www.rbravo.dev',
+      "Get orders fast on WhatsApp: Show your catalog, and connect with customers.",
+    tags: ["Typescript", "Remix", "Tailwind CSS", "Cloudflare", "OSS"],
+    link: "https://zencart.io?utm_source=https://www.rbravo.dev",
+    sideProject: true,
   },
-]
+  {
+    name: "Mercado Rural",
+    description: "A marketplace for rural products.",
+    tags: ["React", "Typescript", "Next.js", "Tailwind CSS", "Node.js", "AWS"],
+    link: "https://mercadorural.org?utm_source=https://www.rbravo.dev",
+    sideProject: true,
+  },
+  {
+    name: "Livance",
+    description:
+      "A platform that allows doctors and psychologists to have an office room in a much easier way (WeWork for doctors).",
+    tags: ["Webflow", "JQuery", "Zapier"],
+    link: "https://www.livance.com.br?utm_source=https://www.rbravo.dev",
+  },
+];

@@ -22,7 +22,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="mx-auto mt-16 flex max-w-2xl px-8 sm:px-0">
+    <div className="mx-auto mt-16 flex max-w-2xl px-6 sm:px-0">
       <div className="flex flex-col">
         <div className="flex gap-x-4">
           <div>
@@ -120,7 +120,7 @@ export default function Index() {
                     )}
                     {hasHighlights ? (
                       <span>
-                        <BoltIcon className="h-4 w-4 text-yellow-400" />
+                        <BoltIcon className="h-4 w-4 text-amber-400" />
                       </span>
                     ) : null}
                   </div>
@@ -174,33 +174,66 @@ export default function Index() {
         </div>
         <div className="mb-16 mt-8">
           <h3 className="mb-2 text-xl font-bold">Projects</h3>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {projects.map(({ name, description, tags, link }) => (
-              <div key={name} className="flex flex-col rounded-lg border p-3">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="font-semibold hover:underline hover:decoration-dotted"
-                    >
-                      {name}
-                    </a>
-                    <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
-                      {description}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-2 flex flex-wrap gap-x-2 gap-y-2">
-                  {tags.map((tag) => (
-                    <div className="inline-block" key={tag}>
-                      {tagComponent({ name: tag })}
+          <div className="grid gap-3 sm:grid-cols-2">
+            {projects.map(
+              ({ name, description, tags, link, sideProject, yc }) => (
+                <div key={name} className="flex flex-col rounded-lg border">
+                  <div className="flex items-center justify-between p-3">
+                    <div>
+                      <div className="flex items-center gap-x-2">
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="font-semibold hover:underline decoration-amber-400 hover:decoration-dotted hover:decoration-amber-400/90"
+                        >
+                          {name}
+                        </a>
+                        {yc ? (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 16 16"
+                          >
+                            <g clipPath="url(#clip0_122_11)">
+                              <path fill="#FB651E" d="M16 0H0v16h16V0z"></path>
+                              <path
+                                fill="#fff"
+                                d="M7.46 9.047L4.716 3.902H5.97l1.615 3.256c.025.058.054.118.087.18.033.062.062.126.087.193a.381.381 0 01.037.068l.025.056a4.108 4.108 0 01.199.46c.066-.141.139-.292.218-.454l.242-.503 1.64-3.256h1.168l-2.77 5.207v3.318H7.46v-3.38z"
+                              ></path>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_122_11">
+                                <path fill="#fff" d="M0 0H16V16H0z"></path>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        ) : null}
+                      </div>
+                      <p className="mt-1 font-mono text-xs font-medium text-neutral-500">
+                        {description}
+                      </p>
                     </div>
-                  ))}
+                  </div>
+                  <div className="mt-auto flex flex-wrap gap-x-2 gap-y-2 p-3">
+                    {tags.map((tag) => (
+                      <div className="inline-block" key={tag}>
+                        {tagComponent({ name: tag })}
+                      </div>
+                    ))}
+                  </div>
+                  {sideProject ? (
+                    <div className="mt-2 bg-gradient-to-r from-neutral-900 to-neutral-700 rounded-b-lg flex justify-center py-1">
+                      <p className="font-mono text-xs text-white">
+                        Side project
+                      </p>
+                    </div>
+                  ) : null}
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </div>
