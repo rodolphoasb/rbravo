@@ -58,8 +58,9 @@ export const experience = [
         description: (
           <div>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
-              Second engineer at the company. I was responsible to help shipping
-              to production the first version of the web and mobile app.
+              As the second engineer at the company, I was responsible for
+              helping to ship the first version of the web and mobile app to
+              production.
             </p>
             <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
               Technologies used: React/NextJS, Prisma, TailwindCSS, Typescript,
@@ -82,9 +83,10 @@ export const experience = [
         endDate: "Jun/22",
         description: (
           <p className="mt-1 font-mono text-xs font-medium text-zinc-500">
-            Development of the initial version of an email-sending platform
-            built for SaaS companies. Technologies used: React/NextJS, Prisma,
-            TailwindCSS, Typescript.
+            As the third engineer at the company, I helped develop the initial
+            version of an innovative email-sending platform tailored for SaaS
+            companies, using technologies such as React/NextJS, Prisma,
+            TailwindCSS, and TypeScript.
           </p>
         ),
       },
