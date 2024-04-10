@@ -1,0 +1,87 @@
+---
+title: Introduction to Machine Learning - Fundamental Concepts (1)
+description: First part of the series 'Introduction to Machine Learning' where we cover the fundamental concepts of machine learning. These are my personal notes from the book 'The StatQuest Illustrated Guide to Machine Learning'.
+published: 2024-04-01
+---
+
+# 1 - Fundamental Concepts
+
+- In a nutshell, **_Machine Learning_** is a set of tools and techniques that transform data into predictions or decisions (which we hope to be good) through tasks such as **_classification_**, **_regression_**, and **_clustering_**, among others. These techniques enable computers to learn patterns and relationships in data without being explicitly programmed, improving their performance on a specific task as they are exposed to more examples.
+
+## Classification
+
+Classification is a fundamental task in Machine Learning, where the objective is to assign a label or category to an input example based on its features. It's a type of supervised learning, which means that the model learns from a dataset with labeled examples, where each example has a known label or category.
+
+The classification process generally follows these steps:
+
+1. Data collection and preparation: Gather a labeled dataset, where each example has a feature vector and a corresponding label. Split the data into training and test sets.
+2. Algorithm choice: Select a classification algorithm suitable for the problem, such as Logistic Regression, Decision Trees, Random Forests, Support Vector Machines (SVM), or Artificial Neural Networks.
+3. Model training: Feed the training set to the chosen algorithm so it can learn the patterns and relationships between the features and labels. The model adjusts its internal parameters to minimize classification error.
+4. Model evaluation: Use the test set to evaluate the performance of the trained model. Common metrics include accuracy, precision, recall, and F1-score.
+5. Model tuning: If necessary, adjust the model's hyperparameters or try different algorithms to improve performance.
+6. Inference: Once the model is trained and validated, it can be used to make predictions (classify) new, unlabeled examples.
+
+Some examples of classification problems include:
+
+- Classifying emails as spam or not spam
+- Medical diagnosis based on symptoms and tests
+- Recognition of handwritten digits
+- Sentiment analysis in product reviews
+
+Classification can be binary (two classes) or multiclass (three or more classes), and some algorithms also support multi-label classification, where an example can belong to multiple classes simultaneously.
+
+## Regression
+
+Regression is another fundamental task in Machine Learning, where the goal is to predict a continuous numerical value based on a set of input variables (features). Unlike classification, which deals with categorical output variables (classes), regression deals with continuous numerical output variables.
+
+The regression process generally follows these steps:
+
+1. Data Collection and Preparation: Gather a dataset with input variables and their corresponding continuous output values. Split the data into training and testing sets.
+2. Algorithm Choice: Select a suitable regression algorithm for the problem, such as Linear Regression, Polynomial Regression, Ridge Regression, Lasso Regression, Support Vector Regression (SVR), or Artificial Neural Networks.
+3. Model Training: Feed the training set to the chosen algorithm so it can learn the patterns and relationships between the input variables and the output variable. The model adjusts its internal parameters to minimize prediction error.
+4. Model Evaluation: Use the testing set to assess the performance of the trained model. Common metrics include Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), and Coefficient of Determination (R²).
+5. Model Tuning: If necessary, adjust the model's hyperparameters or try different algorithms to improve performance.
+6. Inference: Once the model is trained and validated, it can be used to make predictions on new examples.
+
+Some examples of regression problems include:
+
+- Predicting real estate prices based on features such as area, number of bedrooms, and location
+- Estimating sales based on advertising expenses, prices, and other factors
+- Forecasting energy demand based on historical data and climate variables
+- The choice of regression algorithm depends on the complexity of the problem, the amount of available data, and the expected relationship between the input variables and the output variable (linear, non-linear, etc.).
+
+In summary, regression is a powerful technique for predicting continuous numerical values based on a set of input variables, with applications in various areas such as finance, marketing, and engineering.
+
+<aside>
+  > 💡 Regardless of the chosen Machine Learning method, whether it's a
+  traditional algorithm or a sophisticated technique like Convolutional Neural
+  Networks, the most crucial aspect is its performance, which will be tested
+  with new and unknown data.
+</aside>
+
+## Types of variables
+
+### Independent Variables:
+
+- These are the input variables used to predict or explain the dependent variable.
+- Their value is not affected by other variables in the model.
+- Usually denoted by "x" in equations.
+- Example: When predicting the price of a house (dependent variable), the independent variables might be the house's area, number of bedrooms, location, and age of the property.
+
+### Dependent Variables:
+
+- These are the output variables that are being predicted or explained by the independent variables.
+- Their value depends on the values of the independent variables.
+- Usually denoted by "y" in equations.
+- Example: In the example of predicting house prices, the price is the dependent variable, as its value depends on the independent variables (area, number of bedrooms, etc.).
+
+### Continuous Data (you can measure):
+
+- These are data that can take any value within a range.
+- Can be measured on a continuous scale, where there is a smooth progression from one value to another.
+- Examples of continuous variables:
+- Height: a person can be 1.75 m, 1.80 m, or any value in between.
+- Temperature: can be 25°C, 25.5°C, or any value between them.
+- Income: a person can earn $5,000 per month, $5,500, or any value in between.
+
+In contrast, discrete data (you can count) are those that can only take specific values, usually integers, such as the number of children in a family (0, 1, 2, etc.) or the number of cars a person owns.

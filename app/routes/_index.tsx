@@ -1,6 +1,8 @@
 import { BoltIcon } from "@heroicons/react/16/solid";
 import type { MetaFunction } from "@remix-run/node";
 import { Globe2Icon, InfoIcon } from "lucide-react";
+import { BlogCard } from "~/components/BlogCard";
+import { Card } from "~/components/Card";
 import {
   Tooltip,
   TooltipContent,
@@ -95,82 +97,9 @@ export default function Index() {
             ))}
           </div>
         </div>
-        <div className="mt-8">
-          <h3 className="mb-4 text-xl font-bold">Lab</h3>
-          <div className="bg-gray-50 border border-gray-200/50 rounded-lg h-60 p-8">
-            <div className="h-full items-center flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                className="absolute w-full h-full z-10 m-auto will-change-transform opacity-0 transition-opacity group-hover:opacity-100"
-                viewBox="0 0 390 430"
-              >
-                <g
-                  stroke="hsl(var(--foreground-lighter))"
-                  filter="url(#filter5_bd_467_4905)"
-                >
-                  <path d="M192.144 125.816h-53.465a20.841 20.841 0 00-19.334 13.061l-20.34 50.553a20.71 20.71 0 004.377 22.181l10.232 10.506a26.346 26.346 0 017.474 18.384l-.001 14.473c0 20.197 16.373 36.569 36.569 36.569 6.16 0 11.154-4.993 11.154-11.153l.001-86.241a69.855 69.855 0 0120.668-49.602 7 7 0 119.858 9.941 55.853 55.853 0 00-16.526 39.661l-.001 86.241c0 13.892-11.262 25.153-25.154 25.153-27.928 0-50.569-22.64-50.569-50.569l.001-14.474c0-3.218-1.257-6.309-3.503-8.615L93.353 221.38a34.711 34.711 0 01-7.337-37.176l20.341-50.553a34.84 34.84 0 0132.322-21.835h55.729v.084h10.339c49.104 0 88.91 39.806 88.91 88.91v50.842a7 7 0 11-14 0V200.81c0-41.372-33.538-74.91-74.91-74.91H193.23c-.37 0-.732-.029-1.086-.084z"></path>
-                  <path d="M210.03 283.94a7 7 0 10-14 0v3.113c0 26.959 21.854 48.814 48.813 48.814 26.351 0 47.825-20.879 48.781-46.996h24.614a7 7 0 100-14h-26.841a117.176 117.176 0 01-82.173-33.643 7 7 0 10-9.818 9.981 131.184 131.184 0 0080.228 37.134c-.679 18.629-15.995 33.524-34.791 33.524-19.227 0-34.813-15.587-34.813-34.814v-3.113zm28-81.795a8.677 8.677 0 1017.354 0 8.677 8.677 0 00-17.354 0z"></path>
-                </g>
-                <path
-                  stroke="url(#a)"
-                  d="M192.144 125.816h-53.465a20.841 20.841 0 00-19.334 13.061l-20.34 50.553a20.71 20.71 0 004.377 22.181l10.232 10.506a26.346 26.346 0 017.474 18.384l-.001 14.473c0 20.197 16.373 36.569 36.569 36.569 6.16 0 11.154-4.993 11.154-11.153l.001-86.241a69.855 69.855 0 0120.668-49.602 7 7 0 119.858 9.941 55.853 55.853 0 00-16.526 39.661l-.001 86.241c0 13.892-11.262 25.153-25.154 25.153-27.928 0-50.569-22.64-50.569-50.569l.001-14.474c0-3.218-1.257-6.309-3.503-8.615L93.353 221.38a34.711 34.711 0 01-7.337-37.176l20.341-50.553a34.84 34.84 0 0132.322-21.835h55.729v.084h10.339c49.104 0 88.91 39.806 88.91 88.91v50.842a7 7 0 11-14 0V200.81c0-41.372-33.538-74.91-74.91-74.91H193.23c-.37 0-.732-.029-1.086-.084z"
-                ></path>
-                <path
-                  stroke="url(#b)"
-                  d="M210.03 283.94a7 7 0 10-14 0v3.113c0 26.959 21.854 48.814 48.813 48.814 26.351 0 47.825-20.879 48.781-46.996h24.614a7 7 0 100-14h-26.841a117.176 117.176 0 01-82.173-33.643 7 7 0 10-9.818 9.981 131.184 131.184 0 0080.228 37.134c-.679 18.629-15.995 33.524-34.791 33.524-19.227 0-34.813-15.587-34.813-34.814v-3.113z"
-                ></path>
-                <path
-                  stroke="url(#c)"
-                  d="M238.03 202.145a8.677 8.677 0 1017.354 0 8.677 8.677 0 00-17.354 0z"
-                ></path>
-                <defs>
-                  <radialGradient
-                    id="a"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientTransform="rotate(45 -370.983 369.334) scale(166 180)"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="hsl(var(--brand-default))"></stop>
-                    <stop
-                      offset="1"
-                      stopColor="hsl(var(--foreground-lighter))"
-                    ></stop>
-                  </radialGradient>
-                  <radialGradient
-                    id="b"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientTransform="rotate(45 -370.983 369.334) scale(166 180)"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="hsl(var(--brand-default))"></stop>
-                    <stop
-                      offset="1"
-                      stopColor="hsl(var(--foreground-lighter))"
-                    ></stop>
-                  </radialGradient>
-                  <radialGradient
-                    id="c"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientTransform="rotate(45 -370.983 369.334) scale(166 180)"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="hsl(var(--brand-default))"></stop>
-                    <stop
-                      offset="1"
-                      stopColor="hsl(var(--foreground-lighter))"
-                    ></stop>
-                  </radialGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
+        <div className="mt-8 flex sm:flex-row flex-col gap-x-4 gap-y-4 sm:gap-y-0">
+          <Card />
+          <BlogCard />
         </div>
         <div className="mt-8 flex flex-col">
           <h3 className="text-xl font-bold">Experience</h3>
