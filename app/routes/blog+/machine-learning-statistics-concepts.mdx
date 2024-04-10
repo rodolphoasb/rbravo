@@ -1,0 +1,85 @@
+---
+title: Introduction to Machine Learning - Fundamental Concepts in Statistics (3) (in progress)
+description: Third part of the series 'Introduction to Machine Learning' where we cover the fundamental concepts of statistics. These are my personal notes from the book 'The StatQuest Illustrated Guide to Machine Learning'.
+published: 2024-04-08
+---
+
+## Discrete probability distributions:
+
+- Binomial distribution
+- Poisson distribution
+
+### Binomial Distribution:
+
+1. Nature of Experiment: It models the number of successes in a fixed number of independent trials, with each trial having two possible outcomes (success or failure).
+
+2. Parameters: The two parameters are n (the number of trials) and p (the probability of success in each trial).
+
+3. Assumptions:
+
+- There is a fixed number of trials (n).
+- Each trial is independent of others.
+- The probability of success (p) is the same for each trial.
+- The outcome of each trial is binary (success/failure).
+
+4. Applications: Used in scenarios like quality control (defect vs. no defect), survey responses (agree vs. disagree), and any situation with a clear dichotomy in outcomes.
+
+### The Binomial Distribution in a novel way:
+
+Imagine you're in a mystical garden, filled with a peculiar kind of flower called the "Fatebloom." Each Fatebloom has exactly two types of petals: silver and gold. A legend says that if you pluck a petal at random, your day will be filled with luck if it's gold, and ordinary if it's silver. Curious, you decide to conduct an experiment with these magical flowers to see how much luck you might gather in a day.
+
+You decide on a simple ritual: every morning, you will visit the garden, choose a Fatebloom at random, and pluck exactly ten petals, one after the other, recording whether each is silver or gold. You wonder, "What are the chances I'll pluck exactly six gold petals out of ten?" This question, as it turns out, can be answered by the Binomial Distribution.
+
+Here's how the Binomial Distribution comes into play in this enchanted scenario:
+
+Each petal plucked represents a trial. In the context of the Binomial Distribution, a trial is an event with two possible outcomes (in this case, gold for luck, silver for an ordinary day).
+
+The probability of plucking a gold petal (success) is consistent every time you pluck a petal. Let's say, based on the legend, that the chance of getting a gold petal is 50% (0.5) for simplicity.
+
+The number of trials (petal plucks) is fixed in advance: You decide to pluck 10 petals each morning, no more, no less.
+
+Each petal pluck is independent of the others. The outcome of plucking one petal doesn't affect the outcomes of plucking the others.
+
+With these magical elements, the Binomial Distribution tells you the likelihood of various outcomes, such as the probability of plucking exactly six gold petals out of ten, or any number of gold petals, for that matter. It encapsulates the essence of probability in a scenario of multiple, independent trials each with two possible outcomes.
+
+```py
+from scipy.stats import binom
+
+# Given values for the scenario
+
+n = 10 # number of petals plucked
+p = 0.5 # probability of plucking a gold petal (success)
+k = 6 # number of gold petals we're interested in
+
+# Calculate the probability of plucking exactly 6 gold petals out of 10
+
+probability = binom.pmf(k, n, p)
+
+print(f"The probability of plucking exactly 6 gold petals out of 10 is: {probability:.4f}")
+```
+
+### Poisson Distribution
+
+1. Nature of Experiment: It models the number of events occurring in a fixed interval of time or space, with the events occurring independently of the time since the last event.
+
+2. Parameters: The key parameter is λ (lambda), which is the average rate at which events occur in a given time interval or space region.
+
+3. Assumptions:
+
+- Events occur independently.
+- The average rate (λ) is constant throughout the experiment.
+- Two events cannot occur at exactly the same instant.
+- The probability of more than one occurrence in an infinitesimally small time interval is negligible.
+
+4. Applications: Used for modeling counts of events like emails received per day, calls arriving at a call center, decay events per second from a radioactive source, and distribution of organisms in a field.
+
+---
+
+Continuous probability distributions:
+
+- Normal distribution
+- Exponential distribution
+
+```
+
+```
