@@ -8,7 +8,7 @@ export default function Component() {
 
   return (
     <div className="w-full mx-auto flex flex-col items-center max-w-2xl justify-center">
-      <div className="flex justify-start w-full px-10 pt-8">
+      <div className="flex justify-start w-full px-5 sm:px-10 pt-8 pb-4 sm:pb-0">
         {isBlog ? (
           <Link
             to={"/"}
@@ -28,7 +28,7 @@ export default function Component() {
           </Link>
         )}
       </div>
-      <div className="p-10 prose">
+      <div className="sm:p-10 prose w-[85%] sm:w-full">
         <Outlet />
       </div>
     </div>

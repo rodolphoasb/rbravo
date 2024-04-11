@@ -9,7 +9,7 @@ export const Post = ({ slug, frontmatter }: PostMeta) => {
         className="no-underline hover:text-gray-600/80 transition-all hover:underline hover:decoration-dotted hover:decoration-amber-400/90"
         to={`/blog/${slug}`}
       >
-        <h3 className="text-2xl font-medium text-neutral-600">
+        <h3 className="text-2xl mt-0 font-medium text-neutral-600">
           {frontmatter.title}
         </h3>
       </Link>
