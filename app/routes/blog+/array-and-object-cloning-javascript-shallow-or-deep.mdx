@@ -1,0 +1,60 @@
+---
+title: Array and Object Cloning in JavaScript - Shallow or Deep?
+description: Should you clone objects and arrays shallow or deep? What is the difference and when does it matter?
+published: 2024-04-16
+---
+
+Imagine you're an architect and you've designed a blueprint for a house. This blueprint is detailed and contains references to all the elements of the house like doors, windows, and furniture. Now, suppose you want to create another house based on this original blueprint but with some variations.
+
+### Shallow Cloning: Photocopying the Blueprint
+
+Shallow cloning is like taking a photocopy of your original blueprint. This photocopy will have all the main points of the original blueprint, but it's just a surface copy. This means:
+
+- If you alter the basic details on the photocopy (like the color of the walls or the number of windows), those changes are specific to the photocopy and don't affect the original blueprint.
+- However, since the furniture in the blueprint is just referred to (perhaps with a catalog number or a description), the photocopy will use the same references. So, if you decide to change the specifics of a piece of furniture (like altering an armchair to a recliner using the same catalog number), this change will appear in both the original house and any house built from the photocopy because they share the same furniture reference.
+
+### Deep Cloning: Creating a Custom Blueprint
+
+Deep cloning, on the other hand, is like creating a brand new blueprint based on the original. This process involves:
+
+- Copying not just the layout and design but also creating new, unique references for every piece of furniture and fixture. This way, if you decide to change the type of windows or modify the furniture in the new blueprint, these changes won't affect the original house at all. Each house stands completely independent, with its own set of unique elements.
+
+## In JavaScript
+
+Translating this back to JavaScript:
+
+- **Shallow Clone**: When you make a shallow clone of an object, you essentially copy the top-level properties. However, if the original object contains nested objects (like our furniture references), these nested objects are not cloned. Instead, both the original and the clone reference the same nested objects. This is analogous to our photocopying where changes to shared elements affect all copies.
+
+```js
+let original = { color: "blue", furniture: { chair: "wooden" } };
+let shallowClone = Object.assign({}, original); // We could also use the spread operator: {...original}
+shallowClone.furniture.chair = "plastic"; // This changes the chair for both original and clone
+```
+
+- **Deep Clone**: A deep clone, conversely, copies everything. It creates a completely new object with all of the nested structures newly created as well. Thus, modifying a nested structure in the cloned object does not affect the original object.
+
+```js
+let original = { color: "blue", furniture: { chair: "wooden" } };
+let deepClone = JSON.parse(JSON.stringify(original)); // We can also use `structuredClone`
+deepClone.furniture.chair = "plastic"; // This changes the chair only in the clone
+```
+
+### Performance
+
+Continuing with our analogy, imagine you have two construction teams tasked with building houses based on the blueprints (our cloned objects) from the earlier example.
+
+#### Shallow Cloning: Quick Setup Team
+
+The team working with a shallow clone (the photocopy of the original blueprint) has a straightforward task. They only need to build the outer structure of the house according to the new blueprint. The detailed interior elements like furniture are not remade; they simply refer to the existing items cataloged for the original house. This means:
+
+- **Time Efficiency**: The team finishes quicker because they only focus on the structure without worrying about crafting new furniture or detailed interior fittings. They just ensure everything is placed correctly according to the shared references.
+
+- **Resource Efficiency**: Less material and labor are used because they aren't creating new interiors from scratch. They use existing resources.
+
+#### Deep Cloning: Custom Build Team
+
+On the other hand, the team working with a deep clone (the entirely new custom blueprint) must build everything from scratch. Every piece of furniture and every interior detail must be crafted anew, according to the specifications of the new blueprint. This involves:
+
+- **Time Consumption**: The process takes longer because every single element of the house needs to be individually created and assembled. The team must follow detailed plans for every part, which adds considerable time to the project.
+
+- **Resource Intensiveness**: More materials and a greater amount of labor are required. Every item and feature needs new resources, from raw materials to manpower for crafting and installation.

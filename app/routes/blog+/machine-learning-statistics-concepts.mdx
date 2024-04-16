@@ -75,7 +75,50 @@ print(f"The probability of plucking exactly 6 gold petals out of 10 is: {probabi
 
 ---
 
-Continuous probability distributions:
+## Continuous probability distributions:
 
-- Normal distribution
+- Normal (GAussian) distribution
 - Exponential distribution
+
+### The Normal (Gaussian) Distribution
+
+The normal or Gaussian distribution is a continuous probability distribution that is symmetric around its mean, showing that data near the mean are more frequent in occurrence than data far from the mean. In graph form, this distribution will appear as a bell curve.
+
+Key characteristics of the normal distribution include:
+
+1. Symmetry: The distribution is perfectly symmetric around its mean, μ (mu), meaning the bulk of the observations cluster around the central peak and probabilities for values further away from the mean taper off equally in both directions.
+
+2. Mean, Median, and Mode: In a normal distribution, the mean, median, and mode are all located at the center of the distribution.
+
+3. Standard Deviation, σ (sigma): This measures the dispersion or variability around the mean; about 68% of the data falls within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations.
+
+4. Inflection Points: These occur at one standard deviation from the mean on either side and mark the "change of curvature" on the bell curve.
+
+### Likelihood vs Probability
+
+- Probability measures the chance of an event occurring in the future. It is used to quantify the likelihood of specific outcomes in relation to the total number of possible outcomes.
+
+- Likelihood measures how probable a particular set of observations is given a model parameter. It is a function of the parameters of a model; not the outcomes.
+
+Probability pertains to predicting observations before they occur, based on a known model. Likelihood pertains to interpreting or estimating the parameters of the model after observations are made.
+
+### Probability of a single point
+
+One particularly confusing aspect of continuous distributions, such as the normal distribution, is the concept of the probability of a single point. In continuous distributions, the probability that a random variable equals any specific exact value is zero. This concept can be counterintuitive because it seems to contradict our usual understanding of probability, where we often calculate the probability of specific outcomes.
+
+tl dr; In continuous distributions, we should think in terms of probabilities over intervals (areas), not exact values.
+
+## Models
+
+- Models approximate reality to let us explore relationships and make predictions.
+
+- In machine learning, we build models by training machine learning algorithms with Training Data.
+
+- The model learns patterns from the training data to make predictions on new, unseen data (Test Data) and we use statistics to evaluate how well the model performs.
+
+To evalueate the quality of these models we can use the following strategies:
+
+- Sum of the Squared Residuals (SSR)
+- Mean Squared Error (MSE): It's the average of the squared residuals (SSR divided by the number of data points).
+- R Squared (R²)
+- p-value
