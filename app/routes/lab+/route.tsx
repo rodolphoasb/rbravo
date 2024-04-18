@@ -29,6 +29,7 @@ export default function Lab() {
                 loop
                 muted
                 playsInline
+                className="h-auto sm:h-[350px] w-full"
               />
             </div>
           </div>
@@ -57,7 +58,7 @@ export default function Lab() {
                 muted
                 playsInline
                 controls={true}
-                className="h-[350px] sm:h-[500px]"
+                className="h-[350px]"
               />
             </div>
           </div>
@@ -74,7 +75,7 @@ export default function Lab() {
             </p>
             <p className="text-xs text-neutral-500">Date: May 2022</p>
           </div>
-          <div className="w-full sm:w-2/3">
+          <div className="w-full sm:w-2/3 flex justify-center">
             <div className="rounded-md overflow-hidden">
               <video
                 src="https://zenvios.io/loops-demo-1.mp4"
@@ -83,6 +84,7 @@ export default function Lab() {
                 muted
                 playsInline
                 controls={true}
+                className="h-auto sm:h-[350px]"
               />
             </div>
           </div>
