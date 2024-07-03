@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation, useMatches } from "@remix-run/react";
+import { Link, Outlet, useLocation } from "@remix-run/react";
 import { ChevronLeftIcon } from "lucide-react";
 
 export default function Component() {
