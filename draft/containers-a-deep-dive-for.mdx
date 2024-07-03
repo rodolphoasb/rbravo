@@ -1,0 +1,29 @@
+---
+title: Containers: a deep dive
+description: 
+published: 2024-04-16
+---
+
+The necessity to learn more about containers came up to me when I was trying to deploy a monorepo to Fly.io. My knowledge to deploy a software to production is mostly limited to using services that abstracts the complexity of deployment, like Vercel and Cloudflare pages. These kind of services make developes life very easy, you just enter their dashboard, connect your repository and they take care of the rest. But when you want to deploy to your own server instead of going into the serverless route, you need another set of tools and knowledge. Well, here is where containers come in.
+
+## What is a container?
+
+A container is a lightweight, portable unit that encapsulates an application and its dependencies, using Linux kernel features for isolation and resource management.
+
+## Why do we even need containers?
+
+Containers solve real-life company problems by providing consistent environments for applications, eliminating the "works on my machine" issue.
+
+They make a big difference compared to running applications directly on bare metal servers or virtual servers. With bare metal, each app can face compatibility issues and conflicts, and scaling is slow and resource-heavy. Virtual servers help, but they still require a full OS instance per application, which can be inefficient.
+
+Containers boost security by isolating apps, prevent software conflicts, and make better use of resources, saving money. Plus, they make it easy to quickly scale and deploy apps, supporting agile development and DevOps, which helps businesses adapt faster and get products to market quicker.
+
+## Creating a container from 0
+
+The three basic building blocks behind a container are:
+
+1. chroot: Changes the root directory for a process, creating an isolated filesystem environment.
+
+2. Namespaces: Provide isolation for system resources such as processes, network, and file systems, ensuring each container operates independently.
+
+3. Control Groups (cgroups): Manage and limit the resources (CPU, memory, disk I/O, etc.) that each container can use, ensuring efficient resource allocation and preventing one container from consuming all the host's resources.

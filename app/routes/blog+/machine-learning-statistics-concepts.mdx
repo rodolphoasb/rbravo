@@ -122,3 +122,37 @@ To evalueate the quality of these models we can use the following strategies:
 - Mean Squared Error (MSE): It's the average of the squared residuals (SSR divided by the number of data points).
 - R Squared (R²)
 - p-value
+
+### Explaining R Squared (R²) with an analogy
+
+Imagine you are an archery coach, and your goal is to train an archer (the model) to hit a target (predict outcomes). Every arrow the archer shoots represents a prediction made by your model.
+
+- Bulls-eye (Center of the target): Represents the actual values from your data.
+- Where the arrows land: Represents the predicted values from your model.
+
+**R-squared measures the closeness of the arrows to the bulls-eye:**
+
+- **R-squared = 1 (100%):** All arrows hit the bulls-eye perfectly. Your model's predictions are exactly the same as the actual outcomes. This is an ideal scenario where your model explains all the variability in the data perfectly.
+
+- **R-squared = 0%:** The arrows land all around the target but never close to the bulls-eye. This means your model does no better at predicting than simply taking the average of the actual values. The variables you used in the model provide no information about the outcomes according to the data you have.
+
+- **0 < R-squared < 1:** Arrows are closer to the bulls-eye but not always hitting it. The higher the R-squared, the closer the arrows land to the bulls-eye on average, indicating your model explains a larger proportion of the variability in the data.
+
+Thus, R-squared gives you a score that helps you understand how well your predictive model performs in terms of explaining the data it's supposed to predict. This helps you gauge the effectiveness of your model and whether there might be other variables or models that could do a better job.
+
+### R Squared (R²) exercise
+
+Link: [R Squared (R²) exercise](https://chat.openai.com/share/f235be4f-9ce0-4fec-9c79-953a2c80f306)
+
+Write a Python script to calculate R-squared for a simple linear regression model where you predict students exam scores based on their study hours.
+
+**Dataset:**
+
+- Study Hours (X): [5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+- Exam Scores (Y): [55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+
+**Tasks:**
+
+1. Calculate the mean of X and Y.
+2. Calculate the Total Sum of Squares (TSS).
+3. Use the formula for the slope (m) and intercept (b) of the regression line.

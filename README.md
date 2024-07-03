@@ -1,34 +1,18 @@
-# Welcome to Remix + Vite!
+# 👋 Welcome to my Blog Repo
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+- This blog is built with Remix (using Vite) and `mdx`.
+- It's hosted on Fly.io.
 
-## Development
+This is a space where I share my learnings when I find time to write about them. If you see something you'd like to discuss, please open a PR and let's talk!
 
-Run the Express server with Vite dev middleware:
+## Planned Articles
 
-```shellscript
-npm run dev
-```
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Express applications you should be right at home. Just make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+- How to set the initial state when using Lexical - ✅
+- How to create a table using server side pagination with Remix Run.
+- Streamline Local Development: Mastering Webhook Testing with Cloudflare Tunnels
+- Remix Magic: Simplifying Editable Tables with TanStack and FlushSync Techniques
+- You need to peel mushrooms
+- Cloudflare Cron Jobs: A Step-by-Step Guide to Scheduled Tasks with Workers
+- From Local to Cloud: Deploying a Turborepo Monorepo with Prisma and Remix + Docker on Fly.io
+- API Rate Limiting Showdown: Leaky Bucket vs. Token Bucket Algorithms
+- The Hidden Language of Digital Calendars: Decoding .ics Files

@@ -1,0 +1,140 @@
+---
+title: Setting Initial State in Lexical Text Editor
+description: A comprehensive guide on how to properly initialize and set the initial state when working with the Lexical text editor framework. We'll cover key concepts, best practices, and common pitfalls to avoid.
+published: 2024-07-03
+slug: setting-initial-state-lexical-text-editor
+---
+
+### What is Lexical?
+
+TL;DR: Do you want to build something like _Notion's_ text editor? Then Lexical is probably the tool for you.
+
+Lexical is a powerful, extensible text editor framework developed by Facebook (now Meta). It's designed to be flexible, performant, and accessible, making it an excellent choice for a wide range of applications. Lexical can be used to build simple text inputs, complex document editors, or even collaborative editing systems.
+
+### Setting the initial state
+
+I found out that the best way to learn about Lexical is to analyze the types of the component. For the initial config for example we have:
+
+```tsx
+export type InitialEditorStateType =
+  | null
+  | string
+  | EditorState
+  | ((editor: LexicalEditor) => void);
+
+export type InitialConfigType = Readonly<{
+  editor__DEPRECATED?: LexicalEditor | null;
+  namespace: string;
+  nodes?: ReadonlyArray<Klass<LexicalNode> | LexicalNodeReplacement>;
+  onError: (error: Error, editor: LexicalEditor) => void;
+  editable?: boolean;
+  theme?: EditorThemeClasses;
+  editorState?: InitialEditorStateType;
+  html?: HTMLConfig;
+}>;
+```
+
+Do you see that `editorState` with the `InitialEditorStateType` type? That's the place where we can set the initial state of the editor.
+
+As you can see, it can be a `string`, `EditorState`, `null`, or a function that returns a `void`.
+
+Note that string is not a simple string! It's a JSON stringified EditorState. Behind the scenes it calls `JSON.parse(editor.setEditorState)`.
+
+In my case I'm building a WhatsApp template builder with Lexical, and users can choose from a list of pre-built templates.
+
+So basically:
+
+1. I have an array of objects where each object has a `bodyContent` property.
+2. I want to set the initial state of the editor to the `bodyContent` of the selected template.
+3. When users click on a template I use query parameters to set the template id.
+4. I can then use the `useSearchParams` hook from Remix to get the template id and set the initial state of the editor.
+5. My `bodyContent` is something like this:
+
+```
+In {{1}}, our birthday unfolds,\n\n
+A thank you for trust you hold.\n\n
+A special surprise awaits,\n\n
+Just for you, behind these gates.\n\n
+Click below, see deals so rare,\n\n
+But hurry, time won't spare.\n\n
+Limited offers tick away,\n\n
+Seize this gift without delay.
+```
+
+6. And I created this function to convert the `bodyContent` to an `EditorState` (i.e a function that imperatively populates editor):
+
+```tsx
+export function createInitialConfig(
+  template?: string | null
+): InitialConfigType {
+  const baseConfig: Omit<InitialConfigType, "editorState"> = {
+    namespace: "whatsapp-template-editor",
+    theme: whatsappTemplateEditorTheme,
+    onError(error: any) {
+      throw error;
+    },
+    nodes: [],
+    editable: true,
+  };
+
+  if (template) {
+    return {
+      ...baseConfig,
+      editorState: () => {
+        const root = $getRoot();
+        if (root.getFirstChild() === null) {
+          const paragraph = $createParagraphNode();
+
+          const parts = template.split(/(\{\{.*?\}\}|\*.*?\*)/);
+
+          parts.forEach((part) => {
+            if (part.startsWith("{{") && part.endsWith("}}")) {
+              // Placeholder, create as code
+              paragraph.append(createFormattedText(part, ["code"]));
+            } else if (part.startsWith("*") && part.endsWith("*")) {
+              // Bold text
+              paragraph.append(
+                createFormattedText(part.slice(1, -1), ["bold"])
+              );
+            } else {
+              // Regular text
+              paragraph.append($createTextNode(part));
+            }
+          });
+
+          root.append(paragraph);
+        }
+      },
+    };
+  } else {
+    return baseConfig;
+  }
+}
+
+function createFormattedText(
+  text: string,
+  formats: TextFormatType[] = []
+): LexicalNode {
+  let node = $createTextNode(text);
+  formats.forEach((format) => {
+    node = node.toggleFormat(format);
+  });
+  return node;
+}
+```
+
+And this is how I set up my initial state:
+
+```tsx
+<LexicalComposer initialConfig={createInitialConfig(initialValue)}>
+  ...
+</LexicalComposer>
+```
+
+### What to avoid when using Lexical:
+
+- Avoid touching the EditorState directly, even when it's serialized as a JSON.
+
+### Additional Resources & References
+
+- [Gerard Rovira on StackOverflow](https://stackoverflow.com/a/72172529)
